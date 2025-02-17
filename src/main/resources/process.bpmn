@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0fr9mxs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.28.0">
+  <bpmn:process id="Leave-request-process" isExecutable="true" camunda:historyTimeToLive="180">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1fp17al</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1fp17al" sourceRef="StartEvent_1" targetRef="Leave-request" />
+    <bpmn:userTask id="Leave-request" name="Leave request" camunda:formRef="leavereq" camunda:formRefBinding="latest" camunda:assignee="SophiaLee" camunda:candidateUsers="JohnAnderson">
+      <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
+      <bpmn:outgoing>Flow_0b0rgi9</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0b0rgi9" sourceRef="Leave-request" targetRef="Direct-to-supervisor" />
+    <bpmn:userTask id="Leave-request-reply" name="Leave request reply" camunda:formRef="leavereqreply" camunda:formRefBinding="latest" camunda:assignee="RobertJohnson" camunda:candidateUsers="JohnAnderson">
+      <bpmn:incoming>Flow_1j4qzl1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1h51jli</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0j9gdh7">
+      <bpmn:incoming>Flow_1h51jli</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1h51jli" sourceRef="Leave-request-reply" targetRef="Event_0j9gdh7" />
+    <bpmn:sequenceFlow id="Flow_1j4qzl1" sourceRef="Direct-to-supervisor" targetRef="Leave-request-reply" />
+    <bpmn:userTask id="Direct-to-supervisor" name="Direct to supervisor" camunda:formRef="leavereq" camunda:formRefBinding="latest" camunda:assignee="EmmaTurner">
+      <bpmn:incoming>Flow_0b0rgi9</bpmn:incoming>
+      <bpmn:outgoing>Flow_1j4qzl1</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Leave-request-process">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_08mft2c_di" bpmnElement="Leave-request">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0j9gdh7_di" bpmnElement="Event_0j9gdh7">
+        <dc:Bounds x="652" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1iu35em_di" bpmnElement="Leave-request-reply">
+        <dc:Bounds x="530" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14ztc8a_di" bpmnElement="Direct-to-supervisor">
+        <dc:Bounds x="400" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1fp17al_di" bpmnElement="SequenceFlow_1fp17al">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0b0rgi9_di" bpmnElement="Flow_0b0rgi9">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="400" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1h51jli_di" bpmnElement="Flow_1h51jli">
+        <di:waypoint x="630" y="117" />
+        <di:waypoint x="652" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1j4qzl1_di" bpmnElement="Flow_1j4qzl1">
+        <di:waypoint x="500" y="117" />
+        <di:waypoint x="530" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,157 @@
+{
+  "components": [
+    {
+      "text": "## Employee leave request form",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_093ggxa",
+        "columns": null
+      },
+      "id": "Field_0g83iae"
+    },
+    {
+      "components": [
+        {
+          "label": "Name:",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0xbg6wx",
+            "columns": null
+          },
+          "id": "Field_1n3fwnk",
+          "key": "name",
+          "description": "Please enter your name"
+        },
+        {
+          "label": "Last name:",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0xbg6wx",
+            "columns": null
+          },
+          "id": "Field_0yvw08y",
+          "key": "lastname"
+        },
+        {
+          "label": "Department:",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1p13cp8",
+            "columns": null
+          },
+          "id": "Field_0nyhyb2",
+          "key": "department"
+        }
+      ],
+      "showOutline": true,
+      "label": "Employee Information",
+      "type": "group",
+      "layout": {
+        "row": "Row_0atigrl",
+        "columns": 16
+      },
+      "id": "Field_0cuyjxe"
+    },
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "subtype": "date",
+              "dateLabel": "Beginnng on:",
+              "label": "Date time",
+              "type": "datetime",
+              "layout": {
+                "row": "Row_1mhnt9h",
+                "columns": 8
+              },
+              "id": "Field_15elrwo",
+              "key": "begindate"
+            },
+            {
+              "subtype": "date",
+              "dateLabel": "Ending on:",
+              "label": "Date time",
+              "type": "datetime",
+              "layout": {
+                "row": "Row_1mhnt9h",
+                "columns": null
+              },
+              "id": "Field_0b183mf",
+              "key": "enddate"
+            }
+          ],
+          "showOutline": true,
+          "label": "Time off request",
+          "type": "group",
+          "layout": {
+            "row": "Row_05r5fgh",
+            "columns": null
+          },
+          "id": "Field_0ljvjj4"
+        },
+        {
+          "values": [
+            {
+              "label": "Medical leave",
+              "value": "medical"
+            },
+            {
+              "label": "Annual leave",
+              "value": "annual"
+            },
+            {
+              "label": "Ordination leave",
+              "value": "ordination"
+            },
+            {
+              "label": "Bereavement leave",
+              "value": "bereavement"
+            },
+            {
+              "label": "Family reasons",
+              "value": "family"
+            }
+          ],
+          "label": "Type of leave:",
+          "type": "select",
+          "layout": {
+            "row": "Row_00ukkk5",
+            "columns": null
+          },
+          "id": "Field_0tiphiw",
+          "key": "leavetype",
+          "description": "Choose type of leave"
+        },
+        {
+          "label": "Reason for Leave request",
+          "type": "textarea",
+          "layout": {
+            "row": "Row_1fpljie",
+            "columns": 16
+          },
+          "id": "Field_19s7g4e",
+          "key": "leavereason"
+        }
+      ],
+      "showOutline": true,
+      "label": "Leave request",
+      "type": "group",
+      "layout": {
+        "row": "Row_0zl7tml",
+        "columns": null
+      },
+      "id": "Field_1gytw29"
+    }
+  ],
+  "type": "default",
+  "id": "leavereq",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.27.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.21.0",
+  "schemaVersion": 16
+}
