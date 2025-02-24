@@ -145,26 +145,17 @@
       "id": "Field_1gytw29"
     },
     {
-      "values": [
-        {
-          "label": "Approve",
-          "value": "approve"
-        },
-        {
-          "label": "Reject",
-          "value": "reject"
-        }
-      ],
-      "label": "Approve or reject?",
-      "type": "checklist",
+      "label": "Approve or Reject?",
+      "type": "textfield",
       "layout": {
         "row": "Row_0edqemb",
         "columns": null
       },
-      "id": "Field_0e2p2wz",
+      "id": "Field_08h6the",
       "key": "approveorreject",
       "validate": {
-        "required": false
+        "required": true,
+        "pattern": "Approve|Reject"
       }
     }
   ],
